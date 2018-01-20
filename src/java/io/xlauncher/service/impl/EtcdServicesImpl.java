@@ -36,4 +36,18 @@ public class EtcdServicesImpl implements EtcdServices{
         KeysInfosEntity entity = etcdDao.setKeyAndValues(ip,value);
         return entity;
     }
+
+    public String deleteetcdkeys(String ip, String keys) throws Exception {
+        String url = "http://" + ip +"/v2/keys/" + keys;
+
+        String entity = etcdDao.deleteEtcdKeys(url);
+        return entity;
+    }
+
+    public KeysInfosEntity watcherEtcdKeys(String ip, String keys) throws Exception {
+
+        String url = "http://" + ip + "/v2/keys/" + keys +"?wait=true";
+        KeysInfosEntity entity = etcdDao.watcherEtcdKeys(url);
+        return entity;
+    }
 }

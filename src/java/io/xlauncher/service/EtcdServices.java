@@ -24,4 +24,22 @@ public interface EtcdServices {
      * @return
      */
     KeysInfosEntity setKeyAndValues(String ip, String key, String value)throws Exception;
+
+    /**
+     * 删除key
+     * @param ip
+     * @param keys
+     * @return
+     * @throws Exception
+     */
+    String deleteetcdkeys(String ip, String keys)throws Exception;
+
+    /**
+     * 监控指定的key
+     * @param ip
+     * @param keys
+     * @return
+     * @throws Exception
+     */
+    KeysInfosEntity watcherEtcdKeys(String ip, String keys)throws Exception;
 }

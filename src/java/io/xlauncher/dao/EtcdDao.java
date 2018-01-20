@@ -23,4 +23,20 @@ public interface EtcdDao {
      * @throws Exception
      */
     public KeysInfosEntity setKeyAndValues(String ip, String value)throws Exception;
+
+    /**
+     * 删除ETCD的Key
+     * @param url
+     * @return
+     * @throws Exception
+     */
+    String deleteEtcdKeys(String url)throws Exception;
+
+    /**
+     * 监控etcd的Key值的变化
+     * @param url
+     * @return
+     * @throws Exception
+     */
+    KeysInfosEntity watcherEtcdKeys(String url)throws Exception;
 }
