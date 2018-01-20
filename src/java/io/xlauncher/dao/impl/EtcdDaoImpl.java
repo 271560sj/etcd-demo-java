@@ -34,7 +34,9 @@ public class EtcdDaoImpl implements EtcdDao{
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("value",value);
         try {
-             restTemplate.put(ip,null,value);
+            JSONArray
+             restTemplate.put(ip,null,new Object());
+             restTemplate.postForEntity(ip,null,KeysInfosEntity.class,map.toString());
         }catch (Exception e){
             System.out.print(e.getMessage());
         }
